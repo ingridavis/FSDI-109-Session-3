@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import QuantityPicker from './quantityPicker';
 import "./item.css";
 
+import { incrementCartCounter } from "../components/store/actions";
+import { connect } from 'react-redux';
+
+
 class Item extends Component {
     state = { 
         minimum: this.props.product.minimum || 1,
@@ -33,7 +37,7 @@ class Item extends Component {
 
                     ></QuantityPicker>
 
-                    <button  className="btn btn-sm btn-primary btn-add">
+                    <button onClick={this.addProductToCart} className="btn btn-sm btn-primary btn-add">
                         <i class="fas fa-cart-plus addCart-icon"></i>
                         </button>
                 </div>
@@ -42,6 +46,25 @@ class Item extends Component {
           );
     }
 
+    addProductToCart = () => {
+        const addedProduct = {
+            product: this.props.product,
+            quantity: this.setState.quantity,
+        };
+
+        this.props.incrementCartCounter();
+        /* 
+        *Create the action (similiar to addTodo)
+        * create the reducer (similar to todoReducer)
+        * combine the new reducer into rootReducer ( reducer/index.js)
+        * dispatch the action and send the addedProduct
+        * 
+
+        
+        */
+
+
+    };
 
     handleQuantityChange = (qnt) => {
         console.log("Quantity: " + qnt ); 
@@ -50,4 +73,4 @@ class Item extends Component {
     };
 }
  
-export default Item;
+export default connect (null, { incrementCartCounter })(Item);
