@@ -5,9 +5,18 @@ class Cart extends Component {
     state = {  }
     render() { 
         return ( 
-            <h2>Cart Page </h2>
+            <div>
+                <h2>Cart Page </h2>
+                <button className="btn btn-warning">Test Dispatch</button>
+
+            </div>
+            
+
          );
     }
+    testDispatch = () => {
+        console.log("dispatching");
+    };
 }
  
 export default Cart;
