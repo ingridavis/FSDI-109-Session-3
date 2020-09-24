@@ -3,6 +3,8 @@ import React, { Component } from "react";
 
 import { Link } from 'react-router-dom';
 import "./navbar.css";
+import { connect } from 'react-redux';
+//import { incrementCartCounter } from ';
 //cc
 class NavBar extends Component {
     state = { }; // used to contain state of component
@@ -59,22 +61,22 @@ class NavBar extends Component {
                          View Cart
                            
                          <span className="badge badge-warning cart-badge
-                         .cart">3</span>
+                         .cart">{this.props.count}</span>
                         </Link>
                       </div>
                     </div>
                   </nav>
         
         );
-
-
-
-
-
     }
 }
+const mapStateToProps = (state) => {
+  return {
+    count: state.count,
+  };
+};
  
-export default NavBar;
+export default connect(mapStateToProps, null )(NavBar);
 
 // Advanced ES6 Topics to refresh on:
 // Arrow functions
