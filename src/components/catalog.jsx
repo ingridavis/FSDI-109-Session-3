@@ -77,7 +77,6 @@ class Catalog extends Component {
         const data = await service.getProducts();
         this.setState({ items: data });
 
-
         // travel array
         let cats = [];
 

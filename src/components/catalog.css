@@ -38,9 +38,11 @@
     color: rgb(177, 66, 55);
     font-size: 23px;
 }
+
 .category:hover{
     cursor: pointer;
 }
+
 .products{
     text-align: center;
 }
