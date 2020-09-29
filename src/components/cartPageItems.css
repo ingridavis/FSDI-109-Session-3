@@ -1,0 +1,12 @@
+.cartItem{
+    border: 1px solid grey;
+}
+.cartItem:hover{
+    border: 3px solid green;
+}
+.productImage{
+    
+        width: 200px;
+        height: 200px;
+    
+}

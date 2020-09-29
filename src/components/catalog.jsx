@@ -69,10 +69,10 @@ class Catalog extends Component {
         console.log("category clicked", catName);
         this.setState({selectedCategory: catName});
     };
-    componentDidMount(){
+    async componentDidMount(){
         // perfect place to get data from server/DB/ Ajax call
         let service = new ItemService();
-        const data = service.getProducts();
+        const data = await service.getProducts();
         this.setState({ items: data });
 
 

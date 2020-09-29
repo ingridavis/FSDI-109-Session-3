@@ -1,5 +1,6 @@
+import axios from 'axios';
 
-var data = [
+/* var data = [
     {
         id: "5f40a6baac77a903d8f682c6",
         price: 12.32,
@@ -74,13 +75,37 @@ var data = [
         discount: 12,
         category: "Beverages"
     },
-];
+]; */
+
 
 class ItemService {
-    getProducts(){
+    serverUrl = 'http://fsdi.azurewebsites.net/api';
+
+    async getProducts() {
         //retrieve products from the backend
-        return data;
+        
+        const resp = await axios.get(this.serverUrl + '/products');
+        return resp.data;
     }
+    // cart = array of products
+    async saveCart (userName, cart) {
+
+        let data = {
+            user: userName,
+            products: cart,
+            total: 0
+        };
+
+        // verify if there is a cart for user
+
+            // is so, send PUT
+
+            // else, send POST
+
+        const resp = await axios.post(this.serverUrl + '/cart', data); 
+        console.log(resp);
+    }
+
 }
 
 export default ItemService;

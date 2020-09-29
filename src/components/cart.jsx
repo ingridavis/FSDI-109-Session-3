@@ -21,7 +21,7 @@ class Cart extends Component {
                     )}
 
                 </div>
-                <i onClick={this.removeProduct} className = "fa fa-trash-o remove " aria-hidden="true"></i>
+                
             </div>
          );
     }

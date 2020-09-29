@@ -15,7 +15,7 @@ class NavBar extends Component {
                     className="navbar navbar-expand-lg"
                     style={{ backgroundColor: "#fff" }}
                   >
-                    <Link className="navbar-brand" href="/">
+                    <Link className="navbar-brand" to="/">
                       Organika
                     </Link>
                     <button

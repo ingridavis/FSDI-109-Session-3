@@ -5,6 +5,7 @@ import "./item.css";
 import { incrementCartCounter } from "../components/store/actions";
 import { connect } from 'react-redux';
 import { addProduct } from './store/actions/index';
+import ItemService from './../services/itemService';
 
 
 class Item extends Component {
@@ -52,20 +53,9 @@ class Item extends Component {
             product: this.props.product,
             quantity: this.state.quantity,
         };
-        
+
         this.props.addProduct(addedProduct);
         this.props.incrementCartCounter();
-        /* 
-        *Create the action (similiar to addTodo)
-        * create the reducer (similar to todoReducer)
-        * combine the new reducer into rootReducer ( reducer/index.js)
-        * dispatch the action and send the addedProduct
-        * 
-
-        
-        */
-
-
     };
 
     handleQuantityChange = (qnt) => {
@@ -74,5 +64,10 @@ class Item extends Component {
         //now everytime the qnt is changed, it'll update the state
     };
 }
- 
-export default connect (null, { incrementCartCounter, addProduct})(Item);
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart
+    };
+};
+
+export default connect (mapStateToProps, { incrementCartCounter, addProduct})(Item);
