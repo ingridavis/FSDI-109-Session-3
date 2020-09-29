@@ -65,10 +65,12 @@ class Catalog extends Component {
         }
         return catClass;
     }; 
+    
     selectedCategory = (catName) =>{
         console.log("category clicked", catName);
         this.setState({selectedCategory: catName});
     };
+
     async componentDidMount(){
         // perfect place to get data from server/DB/ Ajax call
         let service = new ItemService();
