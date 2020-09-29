@@ -1,13 +1,14 @@
 
 
 /* global */
-.catalog-page{
-    width: 100%;
+.categories{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
 }
 
 /* category */
+
 .category{
     
     display: inline-block;
@@ -19,7 +20,12 @@
     margin-left: 40px;
     margin-bottom: 30px;
     margin-top: 20px;
-   
+}
+.categoryactive-cat h6{
+   font-size: 30px;
+   color: rgb(82, 49, 31);
+   border-bottom: 1px solid rgba(82, 49, 31, 0.603);
+   padding-top: 1rem;
 }
 
 .category h6{

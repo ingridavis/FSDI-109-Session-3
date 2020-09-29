@@ -64,7 +64,7 @@ class Catalog extends Component {
             catClass += "active-cat";
         }
         return catClass;
-    };
+    }; 
     selectedCategory = (catName) =>{
         console.log("category clicked", catName);
         this.setState({selectedCategory: catName});

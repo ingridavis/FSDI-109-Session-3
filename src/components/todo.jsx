@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { addTodo } from "../components/store/actions";
-
+import './todo.css';
 class Todo extends Component {
     state = {
         todoText:"",  
@@ -10,6 +10,7 @@ class Todo extends Component {
     render() { 
         return ( 
             <div className="todo">
+                <h2>TO-DO LIST</h2>
                 <div>
                     <input 
                         type="text" 
@@ -21,9 +22,9 @@ class Todo extends Component {
                     <button onClick={this.addTodo} className="btn btn-primary">Add</button>
                 </div>
 
-                <div className="list">
+                <div className="list-group">
                     
-                    {this.props.todos.map((t) =>  <div className="item">{t}</div>)}
+                    {this.props.todos.map((t) =>  <div className="list-group-item"><li>{t}</li></div>)}
                     <hr></hr>
                     {this.getTodoCount()}
                 </div>
@@ -34,9 +35,9 @@ class Todo extends Component {
     getTodoCount= () =>{
         let count=this.props.todos.length;
         if(count === 1){
-            return <label> We have 1 element in the list </label>;
+            return <label> You have 1 list item </label>;
         }
-         return <label> We have {count} elements in the list </label>;
+         return <label> You have {count} list items </label>;
         
     };
 
