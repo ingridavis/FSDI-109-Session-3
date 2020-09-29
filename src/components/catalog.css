@@ -1,4 +1,5 @@
 
+
 /* global */
 .catalog-page{
     width: 100%;
@@ -8,9 +9,37 @@
 
 /* category */
 .category{
+    
     display: inline-block;
-    padding: 2rem;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    
+    background-color: white;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+   
 }
+
+.category h6{
+    
+    font-size: 20px;
+    word-wrap: break-word;
+    font-weight: 600;
+    color: rgb(82, 49, 31);
+}
+.category h6:hover{
+    color: rgb(177, 66, 55);
+    font-size: 23px;
+}
+.category:hover{
+    cursor: pointer;
+}
+.products{
+    text-align: center;
+}
+
 
 /* catalog banner */ 
 .banner-image{

@@ -4,6 +4,7 @@ import "./item.css";
 
 import { incrementCartCounter } from "../components/store/actions";
 import { connect } from 'react-redux';
+import { addProduct } from './store/actions/index';
 
 
 class Item extends Component {
@@ -38,7 +39,7 @@ class Item extends Component {
                     ></QuantityPicker>
 
                     <button onClick={this.addProductToCart} className="btn btn-sm btn-primary btn-add">
-                        <i class="fas fa-cart-plus addCart-icon"></i>
+                        <i className="fas fa-cart-plus addCart-icon"></i>
                         </button>
                 </div>
                 
@@ -49,9 +50,10 @@ class Item extends Component {
     addProductToCart = () => {
         const addedProduct = {
             product: this.props.product,
-            quantity: this.setState.quantity,
+            quantity: this.state.quantity,
         };
-
+        
+        this.props.addProduct(addedProduct);
         this.props.incrementCartCounter();
         /* 
         *Create the action (similiar to addTodo)
@@ -73,4 +75,4 @@ class Item extends Component {
     };
 }
  
-export default connect (null, { incrementCartCounter })(Item);
+export default connect (null, { incrementCartCounter, addProduct})(Item);

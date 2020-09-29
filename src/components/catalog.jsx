@@ -27,7 +27,7 @@ class Catalog extends Component {
         */
         return ( 
             <div className="catalog-page">
-                <img class="banner-image" src="/images/market-banner2.png" alt=""/>
+                <img className="banner-image" src="/images/market-banner2.png" alt=""/>
                 <div className="categories">
                     
                         <div 

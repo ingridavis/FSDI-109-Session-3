@@ -72,7 +72,7 @@ class NavBar extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    count: state.count,
+    count: state.cart.length,
   };
 };
  
