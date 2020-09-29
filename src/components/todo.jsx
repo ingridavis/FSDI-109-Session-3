@@ -5,7 +5,6 @@ import { addTodo } from "../components/store/actions";
 class Todo extends Component {
     state = {
         todoText:"",  
-
     };
 
     render() { 
